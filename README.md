@@ -9,5 +9,10 @@ This is a basic infrastructure setup in AWS using terraform.
 - modules/iam – IAM roles, policies, and instance profiles.
 - envs/dev, envs/stage, envs/prod – Environment-specific configs (terraform.tfvars, backend.tf, main.tf).
 
-
-<pre> ```text # Folder Structure . ├── modules/ │ ├── vpc/ # VPC, subnets, NAT, IGW │ ├── ec2-autoscaling/ # Launch Template, Auto Scaling Group, Security Groups │ ├── s3/ # S3 buckets with versioning │ └── iam/ # IAM roles, policies, and instance profiles ├── envs/ │ ├── dev/ # terraform.tfvars, backend.tf, main.tf │ ├── stage/ │ └── prod/ ``` </pre>
+<pre> ``` Folder Structure . 
+  ├── modules/ │ ├── vpc/ # VPC, subnets, NAT, IGW 
+               │ ├── ec2-autoscaling/ # Launch Template, Auto Scaling Group, Security Groups 
+               │ ├── s3/ # S3 buckets with versioning │ └── iam/ # IAM roles, policies, and instance profiles 
+  ├── envs/ │ ├── dev/ # terraform.tfvars, backend.tf, main.tf 
+            │ ├── stage/ 
+            │ └── prod/ ``` </pre>

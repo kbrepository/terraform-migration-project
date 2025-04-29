@@ -1,0 +1,2 @@
+.terraform*
+./environments/dev/.terraform*

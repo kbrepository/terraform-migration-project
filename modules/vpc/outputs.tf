@@ -12,3 +12,8 @@ output "private_subnet_ids" {
   description = "IDs of the private subnets"
   value       = aws_subnet.private[*].id
 }
+
+
+# output "default_security_group_id" {
+#   value = aws_vpc.this.default_security_group_id
+# }

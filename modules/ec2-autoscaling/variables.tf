@@ -38,6 +38,6 @@ variable "subnet_ids" {
 }
 
 variable "vpc_id" {
-  description = "ID of the VPC"
+  description = "The ID of the VPC where EC2 will launch"
   type        = string
 }

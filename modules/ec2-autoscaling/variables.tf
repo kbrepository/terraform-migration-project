@@ -36,3 +36,8 @@ variable "subnet_ids" {
   description = "List of Subnet IDs for launching EC2 instances"
   type        = list(string)
 }
+
+variable "vpc_id" {
+  description = "The ID of the VPC where EC2 will launch"
+  type        = string
+}

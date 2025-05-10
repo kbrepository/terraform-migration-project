@@ -1,4 +1,12 @@
-vpc_cidr = "20.0.0.0/16"
-public_subnet_cidrs = ["20.0.1.0/24", "20.0.2.0/24"]
+vpc_cidr             = "20.0.0.0/16"
+public_subnet_cidrs  = ["20.0.1.0/24", "20.0.2.0/24"]
 private_subnet_cidrs = ["20.0.3.0/24", "20.0.4.0/24"]
-azs = ["us-east-1a", "us-east-1b"]
+azs                  = ["us-east-1a", "us-east-1b"]
+bucket_name          = "my-dev-bucket-unique-12345"
+enable_versioning    = true
+force_destroy        = true
+ami_id               = "ami-0c2b8ca1dad447f8a"
+instance_type        = "t3.micro"
+asg_min_size         = 1
+asg_max_size         = 2
+asg_desired_capacity = 1

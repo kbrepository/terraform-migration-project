@@ -32,7 +32,9 @@ This is a basic infrastructure setup in AWS using terraform.
 
 ### 🚀 Apply the infrastructure
 
-```terraform apply tfplan```
+```bash
+terraform apply tfplan
+```
 
 
 ## For Cleanup (Safe Destroy)

@@ -16,19 +16,29 @@ This is a basic infrastructure setup in AWS using terraform.
 ## Terraform Deployment commands to launch the infrastructure.
 
 ### 📁 Navigate to your environment directory
-```cd environments/dev```
+```bash
+cd environments/dev
+```
 
 ### 🧱 Initialize Terraform (downloads providers, configures backend)
-```terraform init```
+```bash
+terraform init
+```
 
 ### ✅ Validate your configuration
-```terraform validate```
+```bash
+terraform validate
+```
 
 ### 🧠 (Optional) Preview what Terraform will do
-```terraform plan -var-file="terraform.tfvars"```
+```bash
+terraform plan -var-file="terraform.tfvars"
+```
 
 ### 💾 Save the plan
-```terraform plan -var-file="terraform.tfvars" -out=tfplan```
+```bash
+terraform plan -var-file="terraform.tfvars" -out=tfplan
+```
 
 ### 🚀 Apply the infrastructure
 

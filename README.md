@@ -15,22 +15,28 @@ This is a basic infrastructure setup in AWS using terraform.
 
 ## Terraform Deployment commands to launch the infrastructure.
 
+### 📁 Navigate to your environment directory
+```cd environments/dev```
+
+### 🧱 Initialize Terraform (downloads providers, configures backend)
+```terraform init```
+
+### ✅ Validate your configuration
+```terraform validate```
+
+### 🧠 (Optional) Preview what Terraform will do
+```terraform plan -var-file="terraform.tfvars"```
+
+### 💾 Save the plan
+```terraform plan -var-file="terraform.tfvars" -out=tfplan```
+
+### 🚀 Apply the infrastructure
+
+```terraform apply tfplan```
 
 
-# 📁 Navigate to your environment directory
-cd environments/dev
+## For Cleanup (Safe Destroy)
 
-# 🧱 Initialize Terraform (downloads providers, configures backend)
-terraform init
+```terraform plan -destroy -var-file="terraform.tfvars" -out=destroy.tfplan```
+```terraform apply destroy.tfplan```
 
-# ✅ Validate your configuration
-terraform validate
-
-# 🧠 (Optional) Preview what Terraform will do
-terraform plan -var-file="terraform.tfvars"
-
-# 💾 Save the plan
-terraform plan -var-file="terraform.tfvars" -out=tfplan
-
-# 🚀 Apply the infrastructure
-terraform apply tfplan

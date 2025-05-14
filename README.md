@@ -8,6 +8,29 @@ This is a basic infrastructure setup in AWS using terraform.
                │ ├── ec2-autoscaling/ # Launch Template, Auto Scaling Group, Security Groups 
                │ ├── s3/ # S3 buckets with versioning 
                │ └── iam/ # IAM roles, policies, and instance profiles 
-  ├── envs/ │ ├── dev/ # terraform.tfvars, backend.tf, main.tf 
-            │ ├── stage/ 
-            │ └── prod/ ``` </pre>
+  ├── environments/ │ ├── dev/ # terraform.tfvars, backend.tf, main.tf 
+                    │ ├── stage/ 
+                    │ └── prod/ ``` </pre>
+
+
+## Terraform Deployment commands to launch the infrastructure.
+
+
+
+# 📁 Navigate to your environment directory
+cd environments/dev
+
+# 🧱 Initialize Terraform (downloads providers, configures backend)
+terraform init
+
+# ✅ Validate your configuration
+terraform validate
+
+# 🧠 (Optional) Preview what Terraform will do
+terraform plan -var-file="terraform.tfvars"
+
+# 💾 Save the plan
+terraform plan -var-file="terraform.tfvars" -out=tfplan
+
+# 🚀 Apply the infrastructure
+terraform apply tfplan

@@ -1,2 +1,23 @@
 .terraform*
 ./environments/dev/.terraform*
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Terraform crash logs
+crash.log
+
+# Terraform variables file (if it contains secrets)
+*.tfvars
+
+# .terraform directory (contains provider/plugin data)
+.terraform/
+
+# Terraform lock file (optional if you're using pinned provider versions)
+.terraform.lock.hcl
+
+# Ignore plan output
+terraform.tfplan
+
+expense-tracker*

@@ -37,6 +37,8 @@ This is a basic infrastructure setup in AWS using terraform.
 
 ## For Cleanup (Safe Destroy)
 
-```terraform plan -destroy -var-file="terraform.tfvars" -out=destroy.tfplan```
-```terraform apply destroy.tfplan```
+```bash
+terraform plan -destroy -var-file="terraform.tfvars" -out=destroy.tfplan
+terraform apply destroy.tfplan
+```
 

@@ -9,4 +9,6 @@ module "ec2_autoscaling" {
   vpc_id                  = module.vpc.vpc_id
   vpc_security_group_ids  = []
   subnet_ids              = module.vpc.public_subnet_ids
+
+  alb_target_group_arn    = module.alb.target_group_arn
 }

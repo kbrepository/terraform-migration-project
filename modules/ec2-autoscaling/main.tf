@@ -78,3 +78,10 @@ resource "aws_security_group" "this" {
     Name = "ec2-sg"
   }
 }
+
+resource "aws_autoscaling_attachment" "this" {
+  count = var.alb_target_group_arn != "" ? 1 : 0
+
+  autoscaling_group_name = aws_autoscaling_group.this.name
+  alb_target_group_arn   = var.alb_target_group_arn
+}

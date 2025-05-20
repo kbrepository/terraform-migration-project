@@ -41,3 +41,9 @@ variable "vpc_id" {
   description = "The ID of the VPC where EC2 will launch"
   type        = string
 }
+
+variable "alb_target_group_arn" {
+  description = "Optional ALB target group to attach ASG to"
+  type        = string
+  default     = ""
+}

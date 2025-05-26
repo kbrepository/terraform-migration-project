@@ -3,6 +3,16 @@ resource "aws_launch_template" "this" {
   image_id      = var.ami_id
   instance_type = var.instance_type
 
+  user_data = base64encode(<<-EOF
+    #!/bin/bash
+    yum update -y
+    yum install -y httpd
+    systemctl enable httpd
+    systemctl start httpd
+    echo "<h1>Hello from Terraform EC2 behind ALB</h1>" > /var/www/html/index.html
+  EOF
+  )
+
   network_interfaces {
     associate_public_ip_address = true
     security_groups             = var.vpc_security_group_ids
@@ -80,8 +90,9 @@ resource "aws_security_group" "this" {
 }
 
 resource "aws_autoscaling_attachment" "this" {
-  count = var.alb_target_group_arn != "" ? 1 : 0
+  depends_on = [aws_autoscaling_group.this]
 
   autoscaling_group_name = aws_autoscaling_group.this.name
-  alb_target_group_arn   = var.alb_target_group_arn
+  lb_target_group_arn    = var.alb_target_group_arn != null ? var.alb_target_group_arn : "skip"
 }
+

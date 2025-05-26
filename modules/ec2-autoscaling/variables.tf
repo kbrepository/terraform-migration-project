@@ -45,5 +45,5 @@ variable "vpc_id" {
 variable "alb_target_group_arn" {
   description = "Optional ALB target group to attach ASG to"
   type        = string
-  default     = ""
+  default     = null
 }

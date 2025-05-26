@@ -20,3 +20,8 @@ variable "alb_name" {
   type        = string
   default     = "app-load-balancer"
 }
+
+variable "alb_security_group_ids" {
+  description = "List of security groups to attach to the ALB"
+  type        = list(string)
+}

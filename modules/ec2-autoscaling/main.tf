@@ -15,7 +15,7 @@ resource "aws_launch_template" "this" {
 
   network_interfaces {
     associate_public_ip_address = true
-    security_groups             = var.vpc_security_group_ids
+    security_groups             = [aws_security_group.this.id]
   }
 
   lifecycle {

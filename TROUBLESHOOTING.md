@@ -57,6 +57,3 @@ This document captures the real-world issues encountered while building the AWS 
 - Use `terraform graph | dot -Tpng > graph.png` to visualize dependencies
 - Always pass outputs between modules through the **root module**, not directly
 
----
-
-Happy troubleshooting! 🔧💡

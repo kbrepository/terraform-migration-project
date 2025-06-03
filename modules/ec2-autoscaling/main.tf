@@ -9,8 +9,45 @@ resource "aws_launch_template" "this" {
     yum install -y httpd
     systemctl enable httpd
     systemctl start httpd
-    echo "<h1>Hello from Terraform EC2 behind ALB</h1>" > /var/www/html/index.html
-  EOF
+
+    cat <<EOF > /var/www/html/index.html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Terraform ALB + EC2</title>
+      <style>
+        body {
+          background-color: #f4f4f4;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding-top: 100px;
+        }
+        .box {
+          background: white;
+          display: inline-block;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        h1 {
+          color: #2c3e50;
+        }
+        p {
+          font-size: 18px;
+          color: #555;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">
+        <h1>Hello from Terraform EC2 Behind ALB 🎉</h1>
+        <p>This page is served from an EC2 instance created via Terraform and connected through an Application Load Balancer.</p>
+      </div>
+    </body>
+    </html>
+    EOF
+
   )
 
   network_interfaces {

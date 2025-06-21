@@ -12,3 +12,8 @@ output "security_group_id" {
   description = "ID of the EC2 Security Group"
   value       = aws_security_group.this.id
 }
+
+output "asg_name" {
+  description = "Auto Scaling Group name"
+  value       = aws_autoscaling_group.this.name
+}
